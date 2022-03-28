@@ -1,0 +1,1 @@
+"#TradingInsights - Gathering Data" 

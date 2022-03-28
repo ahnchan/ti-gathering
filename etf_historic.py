@@ -53,7 +53,11 @@ def gatheringHistoricDataFromYahoo(symbol, start, end):
     csv_data = response.text
     # print(csv_data)
 
-    df = pd.read_csv(io.StringIO(csv_data))
+    cols = ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+
+    #df = pd.read_csv(io.StringIO(csv_data), usecols=cols)
+    df = pd.DataFrame([row.split(',') for row in csv_data.split('\n')], 
+                   columns=cols)
 
     #df.head()
 

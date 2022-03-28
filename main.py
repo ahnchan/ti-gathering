@@ -5,7 +5,7 @@ import etf_list as etfList
 import etf_historic as etfHistoric
 
 # Get ETF List from ETF_US.csv
-df = etfList.gatheringETFList_US()
+df = etfList.getETFList_US()
 
 # print(df.head())
 
@@ -15,8 +15,8 @@ for index, row in df.iterrows():
     symbol = row.iloc[0]
 
     # ERROR
-    #if (index < 2883):
-    #    continue
+    if (index < 472):
+        continue
 
     print(str(index) +':'+ symbol)
 
